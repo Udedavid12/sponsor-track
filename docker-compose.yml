@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: sponsor_track_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: sponsor_track
+    ports:
+      - "5434:5432"
+    volumes:
+      - sponsor_track_data:/var/lib/postgresql/data
+
+volumes:
+  sponsor_track_data:
